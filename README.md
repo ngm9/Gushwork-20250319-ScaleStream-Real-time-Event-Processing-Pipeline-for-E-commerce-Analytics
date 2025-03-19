@@ -1,20 +1,50 @@
+# ScaleStream: Real-time Event Processing Pipeline
 
-                    # ScaleStream: Real-time Event Processing Pipeline for E-commerce Analytics
+## Project Overview
+ScaleStream is a scalable event processing pipeline designed to handle high-volume event data from an e-commerce platform. The system ingests, processes, and analyzes user interactions in real-time, providing valuable insights for business decisions.
 
-                    ## Time to complete: 48h
+## System Requirements
+- Process at least 1,000 events per second
+- Handle various event types (page views, add-to-cart, purchases, etc.)
+- Store aggregated metrics for real-time reporting
+- Scale horizontally to accommodate traffic spikes
+- Provide fault tolerance and error recovery
+- Monitor system performance
 
-                    ## Scenario
-                    Retail Giant is a major online marketplace that processes millions of user interactions daily. They need a real-time analytics system to track user behavior, product performance, and sales trends to make data-driven decisions.
+## Architecture Components
+1. **Event Producer**: Simulates or captures real-time events
+2. **Message Queue**: Buffers events for asynchronous processing
+3. **Event Consumers**: Process events concurrently
+4. **Data Storage**: Stores raw events and aggregated metrics
+5. **API Layer**: Exposes metrics and data for dashboards
+6. **Monitoring**: Tracks system health and performance
 
-You've been tasked with building 'ScaleStream' - a scalable event processing pipeline that can ingest, process, and analyze high volumes of event data from their e-commerce platform. The system needs to handle peak loads of up to 10,000 events per second during flash sales and holiday seasons.
+## Implementation Requirements
+- Use Python 3.8+ for all components
+- Leverage AWS services (SQS, RDS at minimum)
+- Implement concurrent processing for high throughput
+- Optimize database operations for scale
+- Handle errors gracefully with retry mechanisms
+- Include comprehensive logging
+- Follow PEP 8 style guidelines
+- Write unit tests for critical components
 
-The pipeline should process various event types (page views, add-to-cart actions, purchases, product reviews, etc.) and store aggregated metrics in a database for real-time dashboards and reporting. The system must be fault-tolerant, handle backpressure effectively, and scale horizontally as traffic increases.
+## Getting Started
+1. Create free tier AWS accounts for SQS and RDS services
+2. Set up your Python environment
+3. Implement the components following the starter code structure
+4. Run load tests to verify performance
 
-You'll need to implement a producer-consumer architecture using AWS services, optimize database operations for high throughput, and ensure the system can recover gracefully from failures without data loss. The solution should include monitoring capabilities to track system performance and identify bottlenecks.
+## Deliverables
+- Complete source code for all components
+- Documentation of architecture and design decisions
+- Load testing results demonstrating scalability
+- Recommendations for further scaling and optimization
 
-                    ## Outcomes
-                    ['Design and implement a producer service that simulates high-volume event generation (minimum 1,000 events/second) with configurable event types and rates', 'Create a scalable consumer architecture using AWS SQS that can process events concurrently and handle backpressure', 'Implement an event processor that aggregates data by various dimensions (time, product category, user segment, etc.)', 'Build a data storage layer using AWS RDS (PostgreSQL) with optimized schema and query patterns for high-throughput writes and reads', 'Develop a simple REST API that exposes real-time metrics and aggregated data', 'Implement comprehensive error handling, retry mechanisms, and dead-letter queues for failed events', 'Create a monitoring system that tracks key performance metrics (throughput, latency, error rates, queue depth)', "Write a load testing script that demonstrates the system's ability to scale under increasing load", 'Document the architecture, design decisions, and potential bottlenecks with recommendations for further scaling']
-
-                    ## Constraints
-                    ['Must use Python 3.8+ for all components', 'Must leverage AWS services (SQS, RDS at minimum) for the core infrastructure', 'The system must handle at least 1,000 events per second in sustained throughput', 'Database operations must be optimized for high-volume writes (bulk operations, connection pooling, etc.)', 'The solution must include proper connection handling and resource cleanup to prevent leaks', 'All components must be designed to scale horizontally', 'The system must be resilient to failures in any component (graceful degradation)', 'Comprehensive logging must be implemented for troubleshooting and monitoring', 'Code must follow PEP 8 style guidelines and include appropriate documentation', 'The solution must include unit tests for critical components']
-                    
+## Evaluation Criteria
+- System throughput and scalability
+- Code quality and organization
+- Error handling and resilience
+- Database optimization techniques
+- Monitoring implementation
+- Documentation quality
